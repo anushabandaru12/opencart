@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="73840" started-at="2018-02-15T07:08:40Z" finished-at="2018-02-15T07:09:54Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="73840" started-at="2018-02-15T07:08:40Z" finished-at="2018-02-15T07:09:54Z">
+      <class name="Selpack.Testop4">
+        <test-method status="PASS" signature="Intial()[pri:0, instance:Selpack.Testop4@cb5822]" name="Intial" is-config="true" duration-ms="2387" started-at="2018-02-15T12:38:41Z" finished-at="2018-02-15T12:38:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Intial -->
+        <test-method status="PASS" signature="logincred()[pri:0, instance:Selpack.Testop4@cb5822]" name="logincred" duration-ms="71430" started-at="2018-02-15T12:38:43Z" finished-at="2018-02-15T12:39:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logincred -->
+      </class> <!-- Selpack.Testop4 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
