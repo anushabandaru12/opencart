@@ -18,6 +18,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -208,12 +209,12 @@ sheet.getRow(i).createCell(1).setCellValue(checkoutvalues.get(i));
 Thread.sleep(3000);
 
 driver.findElement(By.id(pro.getProperty("confirm.order.id"))).click();
-driver.findElement(By.partialLinkText(pro.getProperty("orderhistory.partialtxt"))).click();
+driver.findElement(By.partialLinkText(pro1.getProperty("orderhistory.partialtxt"))).click();
 
 //******************************************************************
 
 //order history
-driver.findElement(By.xpath(pro.getProperty("view.xpath"))).click();
+driver.findElement(By.xpath(pro1.getProperty("view.xpath"))).click();
 System.out.println("image clicked");	
 Thread.sleep(3000);
 String odernum = driver.findElement(By.xpath(pro1.getProperty("ordernum1.xpath"))).getText();
@@ -237,4 +238,8 @@ String Logout=driver.getTitle();
 Assert.assertEquals(Logout,"Account Logout");
 System.out.println(Logout);
 }
+  @AfterClass 
+  public void Final(){
+  	driver.quit();
+  }
 }

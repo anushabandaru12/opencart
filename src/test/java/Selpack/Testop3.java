@@ -15,6 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -37,7 +38,7 @@ public class Testop3 {
   {
   System.setProperty("webdriver.chrome.driver","D://drivers.sel//chromedriver.exe");
   driver = new ChromeDriver();
-  File file = new File("C://Users//AN252981//workspace//Topgear//Objrepo.properties");	
+  File file = new File("C://Users//AN252981//workspace//opencartTestCase//Objrepo.properties");	
   FileInputStream fis = new FileInputStream(file);
   pro = new Properties();
   pro.load(fis);
@@ -77,7 +78,7 @@ public class Testop3 {
  {
 	 Thread.sleep(3000);
 driver.findElement(By.xpath(pro.getProperty("next.img.click"))).click();
-System.out.println("loop");
+System.out.println("image clicked");
  }
 driver.findElement(By.xpath(pro.getProperty("close.sub.img"))).click();
 
@@ -110,11 +111,8 @@ String Sucsmsg= driver.findElement(By.xpath(pro.getProperty("msg.file"))).getTex
 	buscmg.close();
 
 driver.findElement(By.xpath(pro.getProperty("checkout.xpath"))).click();
-Thread.sleep(3000);
-
-//checkout address
-driver.findElement(By.id(pro.getProperty("newaddress.xpath"))).click();
-
+Thread.sleep(2000);
+driver.findElement(By.xpath("(//input[@name='payment_address'])[2]")).click();;
 //new address
 driver.findElement(By.name(pro.getProperty("firstname.name"))).sendKeys(Fname);
 driver.findElement(By.name(pro.getProperty("lastname.name"))).sendKeys(Lname);
@@ -135,7 +133,7 @@ Region.sendKeys(Keys.ENTER);
 driver.findElement(By.id(pro.getProperty("continue.id"))).click();
 driver.findElement(By.xpath(pro.getProperty("newadd.xpath"))).click();
 Thread.sleep(3000);
-driver.findElement(By.id(pro.getProperty("delivery.continue.xpath"))).click();
+driver.findElement(By.id("button-payment-address")).click();
 driver.findElement(By.name(pro.getProperty("add.comments.name"))).sendKeys(pro.getProperty("comments.send"));
 Thread.sleep(3000);
 driver.findElement(By.id(pro.getProperty("continue.shipping.id"))).click();
@@ -151,7 +149,7 @@ driver.findElement(By.xpath(pro.getProperty("billing.modify.xpath"))).click();
 Thread.sleep(3000);
 driver.findElement(By.xpath(pro.getProperty("oldadd.xpath"))).click();
 Thread.sleep(3000);
-driver.findElement(By.xpath(pro.getProperty("delivery.continue.xpath"))).click();
+driver.findElement(By.id(pro.getProperty("delivery.continue.id"))).click();
 Thread.sleep(3000);
 driver.findElement(By.id(pro.getProperty("continue.shipping.id"))).click();
 Thread.sleep(3000);
@@ -187,7 +185,11 @@ System.out.println(Logout);
   		        }
   		 }
   		 return inputData;
-  }  
+  }
+  //@AfterClass 
+  //public void Final(){
+  	//driver.quit();
+  //}
 	}
 
 

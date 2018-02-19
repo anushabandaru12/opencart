@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -58,7 +59,6 @@ public class Testc1{
 	  driver.get(pro.getProperty("Opencart.URL"));
 	    driver.findElement(By.xpath(pro.getProperty("Xpath1"))).click();
 	    driver.manage().window().maximize();
- 
  		
   }
   
@@ -302,6 +302,11 @@ driver.findElement(By.partialLinkText(pro.getProperty("logout.partiallinktext"))
 String Logout=driver.getTitle();
 Assert.assertEquals(Logout,"Account Logout");
 System.out.println(Logout);
+}
+
+@AfterClass 
+public void Final(){
+	driver.quit();
 }
 
 }

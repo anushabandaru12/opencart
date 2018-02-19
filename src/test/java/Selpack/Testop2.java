@@ -19,6 +19,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -68,7 +69,7 @@ public class Testop2 {
  }
 //*****************************************************************
  	   
-@Test(dataProvider="searchfld" ,priority=2)	  
+@Test(dataProvider="searchfld",priority=2)	  
 public void searchtest(String searchvalue) throws IOException, InterruptedException{
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -207,7 +208,7 @@ driver.findElement(By.partialLinkText(pro.getProperty("logout.partial"))).click(
 //********************************************************************
 
 @DataProvider(name="searchfld")
-public Object[] srchfld() throws BiffException, IOException {
+public Object[][] srchfld() throws BiffException, IOException {
 //TO read from excel
 	 File search = new File("C://Users//AN252981//Desktop//extra docs//Selenium top//searchvalue.xls");
 	   Workbook srcapp = Workbook.getWorkbook(search);
@@ -216,12 +217,19 @@ public Object[] srchfld() throws BiffException, IOException {
 // To get values from Excel 
 	   int i=0;
 	   int row= srcsht.getRows();
-	   String[] inputData= new String[row];
+	   String[][] inputData= new String[1][1];
 	   Cell c = srcsht.getCell(row-1,i);
-	   inputData[i] = c.getContents();
+	   inputData[i][0] = c.getContents();
 	   System.out.println(c.getContents());  
 	   return inputData;
 }
-	}
+
+@AfterClass 
+public void Final(){
+	
+	driver.quit();
+}
+
+}
 
 
