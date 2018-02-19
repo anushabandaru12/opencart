@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
-  <test name="Test(failed)">
+  <test name="Test1(failed)">
     <classes>
       <class name="Selpack.Testop2">
         <methods>
           <include name="Intial"/>
-          <include name="searchtest"/>
+          <include name="Final"/>
         </methods>
       </class> <!-- Selpack.Testop2 -->
       <class name="Selpack.Testc1">
         <methods>
           <include name="wishlist"/>
           <include name="Intial"/>
+          <include name="Final"/>
           <include name="steps"/>
           <include name="ratingsteps" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- Selpack.Testc1 -->
-      <class name="Selpack.Testop3">
-        <methods>
-          <include name="Intial"/>
-          <include name="logincred" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- Selpack.Testop3 -->
       <class name="Selpack.Testop4">
         <methods>
           <include name="Intial"/>
+          <include name="Final"/>
         </methods>
       </class> <!-- Selpack.Testop4 -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

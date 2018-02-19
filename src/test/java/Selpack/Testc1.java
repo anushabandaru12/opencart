@@ -5,15 +5,18 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-
+import java.net.URL;
 import java.util.Properties;
 import java.util.Scanner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -37,14 +40,28 @@ public class Testc1{
 	String Name;
 	String emailc;
 	registrationpage regPage;
+	String url;
 //*********************************************************
 	
   @BeforeClass
   public void Intial() throws IOException 
   {
-  System.setProperty("webdriver.chrome.driver","D://drivers.sel//chromedriver.exe");
+  /*System.setProperty("webdriver.chrome.driver","D://drivers.sel//chromedriver.exe");
   driver = new ChromeDriver();
-  File file = new File("C://Users//AN252981//workspace//Topgear//Objrepo.properties");	
+ */ 
+	  url = "http://10.159.34.58:4444/wd/hub";
+      try {
+          DesiredCapabilities capabilities = new DesiredCapabilities();
+          capabilities.setBrowserName("chrome");
+          capabilities.setPlatform(Platform.WINDOWS);
+          driver = new RemoteWebDriver(new URL(url), capabilities);
+      }
+      catch(Exception e)
+      {
+          e.printStackTrace();
+      }
+          
+ File file = new File("C://Users//AN252981//workspace//Topgear//Objrepo.properties");	
   FileInputStream fis = new FileInputStream(file);
   pro = new Properties();
   pro.load(fis);
@@ -69,7 +86,7 @@ public class Testc1{
   {
 	 
 	 regPage =new registrationpage(driver);
-	 
+
 //Elements to assign
     driver.findElement(By.xpath(pro.getProperty("Xpathfname"))).sendKeys(FirstName);
    // regPage.FnameB.sendKeys(FirstName);
@@ -78,8 +95,9 @@ public class Testc1{
     
     WebElement Lname = driver.findElement(By.xpath(pro.getProperty("XpathLname")));
     Lname.sendKeys(LastName);
-    
-    driver.findElement(By.xpath(pro.getProperty("Email"))).sendKeys(email); 
+	 String Emailadd=System.nanoTime()+email;
+	 System.out.println("The changed email is " + Emailadd);
+	 driver.findElement(By.xpath(pro.getProperty("Email"))).sendKeys(Emailadd); 
     emailc=driver.findElement(By.xpath(pro.getProperty("Email"))).getAttribute("value");
     
     WebElement phonenumber = driver.findElement(By.xpath(pro.getProperty("phonenum")));
@@ -147,6 +165,7 @@ public Object[][] getDataFromDataprovider() throws BiffException, IOException{
 	public void steps() throws IOException, InterruptedException{
 	Thread.sleep(3000);
 	driver.findElement(By.xpath(pro.getProperty("contact"))).click();
+	
 	String lognam=driver.findElement(By.name(pro.getProperty("Namelog"))).getAttribute("value");
 	Assert.assertEquals(Name, lognam);
 	System.out.println("Verified");
@@ -163,7 +182,7 @@ public Object[][] getDataFromDataprovider() throws BiffException, IOException{
 	String capname= scan.nextLine();
 	driver.findElement(By.name("captcha")).sendKeys(capname);*/
 	
-Thread.sleep(4000);	
+Thread.sleep(20000);	
 //Continue
 	driver.findElement(By.xpath(pro.getProperty("contactContin"))).click();
 	Thread.sleep(3000);
@@ -215,7 +234,7 @@ System.out.println("Enter captcha: ");
 Scanner scan= new Scanner(System.in);
 String captc= scan.nextLine();
 driver.findElement(By.name("captcha")).sendKeys(captc);*/
-Thread.sleep(3000);
+Thread.sleep(10000);
 
 driver.findElement(By.id(pro.getProperty("review.continue"))).click();
 Thread.sleep(3000);

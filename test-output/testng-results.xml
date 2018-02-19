@@ -1,46 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="213945" started-at="2018-02-19T06:15:11Z" finished-at="2018-02-19T06:18:45Z">
+  <suite name="Default suite" duration-ms="89741" started-at="2018-02-19T09:30:26Z" finished-at="2018-02-19T09:31:56Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="213945" started-at="2018-02-19T06:15:11Z" finished-at="2018-02-19T06:18:45Z">
-      <class name="Selpack.Testop2">
-        <test-method status="PASS" signature="Intial()[pri:0, instance:Selpack.Testop2@29774679]" name="Intial" is-config="true" duration-ms="3941" started-at="2018-02-19T11:46:37Z" finished-at="2018-02-19T11:46:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Intial -->
-        <test-method status="PASS" signature="logincred()[pri:0, instance:Selpack.Testop2@29774679]" name="logincred" duration-ms="6633" started-at="2018-02-19T11:46:41Z" finished-at="2018-02-19T11:46:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logincred -->
-        <test-method status="PASS" signature="searchtest(java.lang.String)[pri:0, instance:Selpack.Testop2@29774679]" name="searchtest" duration-ms="42566" started-at="2018-02-19T11:46:48Z" data-provider="searchfld" finished-at="2018-02-19T11:47:30Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[apple]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchtest -->
-        <test-method status="PASS" signature="Final()[pri:0, instance:Selpack.Testop2@29774679]" name="Final" is-config="true" duration-ms="1110" started-at="2018-02-19T11:47:30Z" finished-at="2018-02-19T11:47:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Final -->
-      </class> <!-- Selpack.Testop2 -->
+    <test name="Default test" duration-ms="89741" started-at="2018-02-19T09:30:26Z" finished-at="2018-02-19T09:31:56Z">
       <class name="Selpack.Testc1">
-        <test-method status="PASS" signature="Intial()[pri:0, instance:Selpack.Testc1@42d80b78]" name="Intial" is-config="true" duration-ms="8974" started-at="2018-02-19T11:45:11Z" finished-at="2018-02-19T11:45:20Z">
+        <test-method status="PASS" signature="Intial()[pri:0, instance:Selpack.Testc1@29774679]" name="Intial" is-config="true" duration-ms="4149" started-at="2018-02-19T15:00:26Z" finished-at="2018-02-19T15:00:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Intial -->
-        <test-method status="PASS" signature="opencart()[pri:0, instance:Selpack.Testc1@42d80b78]" name="opencart" duration-ms="1600" started-at="2018-02-19T11:45:20Z" finished-at="2018-02-19T11:45:22Z">
+        <test-method status="PASS" signature="opencart()[pri:0, instance:Selpack.Testc1@29774679]" name="opencart" duration-ms="1762" started-at="2018-02-19T15:00:30Z" finished-at="2018-02-19T15:00:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- opencart -->
-        <test-method status="PASS" signature="Launchbrowser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Selpack.Testc1@42d80b78]" name="Launchbrowser" duration-ms="2289" started-at="2018-02-19T11:45:22Z" data-provider="userData" finished-at="2018-02-19T11:45:24Z">
+        <test-method status="PASS" signature="Launchbrowser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Selpack.Testc1@29774679]" name="Launchbrowser" duration-ms="2791" started-at="2018-02-19T15:00:32Z" data-provider="userData" finished-at="2018-02-19T15:00:35Z">
           <params>
             <param index="0">
               <value>
@@ -54,7 +29,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[anusha.hgt1953@gmail.com]]>
+                <![CDATA[anusha.hgt1623@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -96,11 +71,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Launchbrowser -->
-        <test-method status="PASS" signature="steps()[pri:0, instance:Selpack.Testc1@42d80b78]" name="steps" duration-ms="28536" started-at="2018-02-19T11:45:24Z" finished-at="2018-02-19T11:45:53Z">
+        <test-method status="PASS" signature="steps()[pri:0, instance:Selpack.Testc1@29774679]" name="steps" duration-ms="31629" started-at="2018-02-19T15:00:35Z" finished-at="2018-02-19T15:01:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- steps -->
-        <test-method status="PASS" signature="ratingsteps(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Selpack.Testc1@42d80b78]" name="ratingsteps" duration-ms="17016" started-at="2018-02-19T11:45:53Z" data-provider="reviewdata" finished-at="2018-02-19T11:46:10Z">
+        <test-method status="PASS" signature="ratingsteps(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Selpack.Testc1@29774679]" name="ratingsteps" duration-ms="16740" started-at="2018-02-19T15:01:07Z" data-provider="reviewdata" finished-at="2018-02-19T15:01:24Z">
           <params>
             <param index="0">
               <value>
@@ -121,7 +96,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ratingsteps -->
-        <test-method status="PASS" signature="ratingsteps(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Selpack.Testc1@42d80b78]" name="ratingsteps" duration-ms="10395" started-at="2018-02-19T11:46:10Z" data-provider="reviewdata" finished-at="2018-02-19T11:46:20Z">
+        <test-method status="PASS" signature="ratingsteps(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Selpack.Testc1@29774679]" name="ratingsteps" duration-ms="16664" started-at="2018-02-19T15:01:24Z" data-provider="reviewdata" finished-at="2018-02-19T15:01:40Z">
           <params>
             <param index="0">
               <value>
@@ -142,29 +117,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ratingsteps -->
-        <test-method status="PASS" signature="wishlist()[pri:0, instance:Selpack.Testc1@42d80b78]" name="wishlist" duration-ms="14953" started-at="2018-02-19T11:46:20Z" finished-at="2018-02-19T11:46:35Z">
+        <test-method status="PASS" signature="wishlist()[pri:0, instance:Selpack.Testc1@29774679]" name="wishlist" duration-ms="15282" started-at="2018-02-19T15:01:40Z" finished-at="2018-02-19T15:01:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- wishlist -->
-        <test-method status="PASS" signature="Final()[pri:0, instance:Selpack.Testc1@42d80b78]" name="Final" is-config="true" duration-ms="1437" started-at="2018-02-19T11:46:35Z" finished-at="2018-02-19T11:46:37Z">
+        <test-method status="PASS" signature="Final()[pri:0, instance:Selpack.Testc1@29774679]" name="Final" is-config="true" duration-ms="418" started-at="2018-02-19T15:01:56Z" finished-at="2018-02-19T15:01:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Final -->
       </class> <!-- Selpack.Testc1 -->
-      <class name="Selpack.Testop4">
-        <test-method status="PASS" signature="Intial()[pri:0, instance:Selpack.Testop4@1bce4f0a]" name="Intial" is-config="true" duration-ms="2780" started-at="2018-02-19T11:47:31Z" finished-at="2018-02-19T11:47:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Intial -->
-        <test-method status="PASS" signature="logincred()[pri:0, instance:Selpack.Testop4@1bce4f0a]" name="logincred" duration-ms="70005" started-at="2018-02-19T11:47:34Z" finished-at="2018-02-19T11:48:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logincred -->
-        <test-method status="PASS" signature="Final()[pri:0, instance:Selpack.Testop4@1bce4f0a]" name="Final" is-config="true" duration-ms="1084" started-at="2018-02-19T11:48:44Z" finished-at="2018-02-19T11:48:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Final -->
-      </class> <!-- Selpack.Testop4 -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -13,10 +14,13 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -33,15 +37,28 @@ public class Testop2 {
 
 	WebDriver driver;
 	Properties pro;
+	String url;
 
 //*********************************************************
 	
   @BeforeClass
   public void Intial() throws IOException 
   {
-  System.setProperty("webdriver.chrome.driver","D://drivers.sel//chromedriver.exe");
+  /*System.setProperty("webdriver.chrome.driver","D://drivers.sel//chromedriver.exe");
   driver = new ChromeDriver();
-  File file = new File("C://Users//AN252981//workspace//Topgear//Objrepo.properties");	
+ */ 
+
+url = "http://10.159.34.58:4444/wd/hub";
+        try {
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setBrowserName("chrome");
+            capabilities.setPlatform(Platform.WINDOWS);
+            driver = new RemoteWebDriver(new URL(url), capabilities);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        File file = new File("C://Users//AN252981//workspace//Topgear//Objrepo.properties");	
   FileInputStream fis = new FileInputStream(file);
   pro = new Properties();
   pro.load(fis);
@@ -200,8 +217,10 @@ driver.findElement(By.xpath(pro.getProperty("newsletter.subs.xpath"))).click();
 driver.findElement(By.partialLinkText(pro.getProperty("special.partial.text"))).click();
 
 //logout
-driver.findElement(By.partialLinkText(pro.getProperty("logout.partial"))).click();
-
+driver.findElement(By.partialLinkText(pro.getProperty("logout.partiallinktext"))).click();
+String Logout=driver.getTitle();
+Assert.assertEquals(Logout,"Account Logout");
+System.out.println(Logout);;
 		
  }
 

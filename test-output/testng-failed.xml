@@ -3,12 +3,15 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Selpack.Testop3">
+      <class name="Selpack.Testc1">
         <methods>
+          <include name="wishlist"/>
           <include name="Intial"/>
-          <include name="logincred" invocation-numbers="0"/>
+          <include name="Final"/>
+          <include name="steps"/>
+          <include name="ratingsteps" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- Selpack.Testop3 -->
+      </class> <!-- Selpack.Testc1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
