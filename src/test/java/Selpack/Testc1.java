@@ -156,14 +156,14 @@ public Object[][] getDataFromDataprovider() throws BiffException, IOException{
 	System.out.println("Verified");
 	driver.findElement(By.name(pro.getProperty("Enquiry.name"))).sendKeys(pro.getProperty("Enquirydesc"));
 	
-//Scanner	
+/*//Scanner	
 	driver.findElement(By.name("captcha")).clear();
 	System.out.println("Enter captcha: ");
 	Scanner scan= new Scanner(System.in);
 	String capname= scan.nextLine();
-	driver.findElement(By.name("captcha")).sendKeys(capname);
+	driver.findElement(By.name("captcha")).sendKeys(capname);*/
 	
-	
+Thread.sleep(4000);	
 //Continue
 	driver.findElement(By.xpath(pro.getProperty("contactContin"))).click();
 	Thread.sleep(3000);
@@ -209,12 +209,13 @@ else
 	driver.findElement(By.xpath(pro.getProperty("rating5.xpath"))).click();
 }
 
-//captcha
+/*//captcha
 driver.findElement(By.name("captcha")).clear();
 System.out.println("Enter captcha: ");
 Scanner scan= new Scanner(System.in);
 String captc= scan.nextLine();
-driver.findElement(By.name("captcha")).sendKeys(captc);
+driver.findElement(By.name("captcha")).sendKeys(captc);*/
+Thread.sleep(3000);
 
 driver.findElement(By.id(pro.getProperty("review.continue"))).click();
 Thread.sleep(3000);
