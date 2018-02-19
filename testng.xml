@@ -3,9 +3,9 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="Selpack.Testc1"/>
+      <!-- <class name="Selpack.Testc1"/> -->
       <class name="Selpack.Testop2"/>
-      <class name="Selpack.Testop3"/>
+      <!-- <class name="Selpack.Testop3"/> -->
       <class name="Selpack.Testop4"/>
     </classes>
   </test> <!-- Test -->
